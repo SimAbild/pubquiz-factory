@@ -1,0 +1,16 @@
+[
+  { "name": "Free", "description": "Joining costs nothing." },
+  { "name": "Deal", "description": "A deal for everyone who joins, for example free beer for the first hour." },
+  { "name": "League", "description": "Points are collected over several nights, and there is an overall winner at the end." },
+  { "name": "Prize", "description": "There are prizes for the best teams." },
+  { "name": "Book online", "description": "Reserve your spot through the venue's online booking page." },
+  { "name": "Drop-in", "description": "Just show up. Booking is optional." },
+  { "name": "Sign up at door", "description": "You sign up when you arrive. Reservations are not possible." },
+  { "name": "First come first served", "description": "Spots go to whoever signs up or arrives first, so come early." },
+  { "name": "Email sign-up", "description": "Sign up by email with your team name and number of players." },
+  { "name": "SMS sign-up", "description": "Sign up by sending a text message to the venue." },
+  { "name": "Instagram DM sign-up", "description": "Sign up by sending the venue a direct message on Instagram." },
+  { "name": "Online sign-up", "description": "Sign up through a button on the venue's website." },
+  { "name": "Tickets", "description": "You buy a ticket for each player on your team." },
+  { "name": "No sign-up", "description": "No sign-up needed. Just turn up." }
+]
