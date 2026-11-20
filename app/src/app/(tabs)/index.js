@@ -4,8 +4,14 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { WEEK_DAYS } from '../../constants/days';
 import { getShortDayName, getTodayName } from '../../utils/days';
 
+import {getAllQuizzes} from "../../services/quizzes";
+import {getQuizzesForDay} from "../../utils/quizzes";
+
 export default function AllQuizzesScreen() {
   const [selectedDay, setSelectedDay] = useState(getTodayName());
+  const allQuizzes = getAllQuizzes();
+  const quizzesForDay = getQuizzesForDay(allQuizzes, selectedDay);
+
 
   return (
     <View style={styles.screen}>

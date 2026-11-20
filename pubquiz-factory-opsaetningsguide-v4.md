@@ -595,7 +595,7 @@ Route-filer i src/app/ skrives med små bogstaver og uden "Screen" (calendar.js)
 
 **Tomme filer giver en advarsel**
 
-Skelettet har tomme route-filer. Indtil du når til det byggetrin, hvor filen udfyldes, viser Expo en advarsel om "missing the required default export". Det er forventet.
+Skelettet har tomme route-filer. Indtil du når til det byggetrin, hvor filen udfyldes, viser Expo en advarsel om "missing the required default export". Det er forventet for skærme. **Men en tom _layout.js får appen til at crashe** ("Element type is invalid … got: undefined"). Lav derfor først _layout.js-filerne i B3, når de får indhold.
 
 ### Regler
 
@@ -1150,6 +1150,7 @@ Repoet er offentligt. Intet fra denne tabel må nogensinde committes. Tjek altid
 | Refine reagerer ikke på et issue | Din bærbare/n8n er slukket, workflowet er ikke aktivt, eller issuet er ikke oprettet af dig |
 | Neo4j: vektorsøgning fejler | Vektorindekset mangler, eller embeddings har ikke 768 dimensioner (forkert model) |
 | Expo: "missing the required default export" | En route-fil er tom eller mangler `export default`. Forventet i skelettet, indtil filen udfyldes |
+| Expo: "Element type is invalid … got: undefined" og `WrappedScreenComponent` | En _layout.js (eller skærm) er tom eller mangler `export default`. Slet tomme _layout.js-filer, eller giv dem indhold (B3) |
 | En ekstra skærm som /components/... dukker op | En hjælpemappe ligger inde i src/app/. Flyt den op til src/ |
 | Expo Router finder ingen skærme | Skærmene ligger ikke i app/src/app/, eller der ligger en src/ i roden af repoet i stedet for i app/ |
 | .env er kommet med i et commit | Skift alle tre hemmeligheder med det samme, fjern filen fra repoet, og tjek .gitignore |
