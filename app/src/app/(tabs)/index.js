@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
-import { WEEK_DAYS } from '../../constants/days';
-import { getShortDayName, getTodayName } from '../../utils/days';
+import { getTodayName } from '../../utils/days';
 
 import {getAllQuizzes} from "../../services/quizzes";
 import {getQuizzesForDay} from "../../utils/quizzes";
+import WeekStrip from "../../components/WeekStrip";
 
 export default function AllQuizzesScreen() {
   const [selectedDay, setSelectedDay] = useState(getTodayName());
@@ -15,18 +15,11 @@ export default function AllQuizzesScreen() {
 
   return (
     <View style={styles.screen}>
-      <View style={styles.weekStrip}>
-        {WEEK_DAYS.map((day) => (
-          <Pressable
-            key={day}
-            onPress={() => setSelectedDay(day)}
-            style={[styles.day, day === selectedDay && styles.selectedDay]}
-          >
-            <Text>{getShortDayName(day)}</Text>
-          </Pressable>
-        ))}
-      </View>
-
+      <WeekStrip
+        selectedDay={selectedDay}
+        onSelectDay={setSelectedDay}
+        quizzes={allQuizzes}
+      />
       <Text style={styles.heading}>Quizzes on {selectedDay}</Text>
     </View>
   );
@@ -37,18 +30,6 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 16,
     gap: 16,
-  },
-  weekStrip: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  day: {
-    paddingVertical: 8,
-    paddingHorizontal: 10,
-    borderRadius: 8,
-  },
-  selectedDay: {
-    backgroundColor: '#FFE082',
   },
   heading: {
     fontSize: 20,
