@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {FlatList, StyleSheet, Text, View} from 'react-native';
 
 import { getTodayName } from '../../utils/days';
 
@@ -21,6 +21,13 @@ export default function AllQuizzesScreen() {
         quizzes={allQuizzes}
       />
       <Text style={styles.heading}>Quizzes on {selectedDay}</Text>
+      <FlatList
+          data={quizzesForDay}
+          keyExtractor={(quiz) => quiz.id}
+          renderItem={({item}) => <Text>{item.name}</Text>}
+          ListEmptyComponent={<Text>No quizzes added yet</Text>}
+        />
+
     </View>
   );
 }
